@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="progress-style.css">
+		<title>Progress Bar Project - Ractive</title>
+	</head>
+	<body>
+		<div id='container'></div>
+
+		<script id='progressBar' type='text/ractive'>
+			<div id="sidebar-left">
+				{{#each dataBar:num}}
+					<div class='bar-label'>{{ name }}</div>
+					<div id='{{ id }}' class='progress'>
+						<div class='bar-text'>{{ 100 * value / total }}%</div>
+						<div class='bar {{ fullClass }}' style='width: {{ 100 * width / total }}%;'></div>
+					</div>
+				{{/each}}
+			</div>
+			<div id="sidebar-right">
+				<select value='{{selectedColors}}'>
+					<option selected disabled>Select a bar</option>
+					{{#each dataBar:num}}
+						<option value='{{num}}'>{{name}}</option>
+					{{/each}}
+				</select>
+				<button on-click='setPercent:{{selectedColors}},true,10'>+10%</button>
+				<button on-click='setPercent:{{selectedColors}},true,25'>+25%</button>
+				<button on-click='setPercent:{{selectedColors}},true,30'>+30%</button>
+				<button on-click='setPercent:{{selectedColors}},false,10'>-10%</button>
+				<button on-click='setPercent:{{selectedColors}},false,25'>-25%</button>
+				<button on-click='setPercent:{{selectedColors}},false,30'>-30%</button>
+			</div>
+		</script>
+			<script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
+			<script src="progress-action.js">
+			</script>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+.progress {
+    height: 20px;
+    position: relative;
+    width: 70%;
+	margin: 25px 0px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #ddd;
+}
+.progress .bar {
+    height: 100%;
+    transition: width 0.1s ease-out 0s;
+	overflow: hidden;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #555;
+}
+
+.progress .bar-text {
+	color: #FFFFFF;
+	text-align:center;
+	position: absolute;
+	width: 100%;
+}
+.bar-label {
+	color: #000000;
+	position: relative;
+}
+
+#bar1 {
+    background-color: #ddd;
+}
+#bar1 .bar {
+    background-color: #555;
+}
+
+#bar2 {
+    background-color: #178093;
+}
+#bar2 .bar {
+    background-color: #ffd100;
+}
+
+#bar3 {
+    background-color: #178093;
+}
+#bar3 .bar {
+    background-color: #ffd100;
+}
+
+.bar.full {
+	background-color: #ff0000 !important;
+	width: 100% !important;
+}
+#sidebar-left {
+ float: left;
+    width: 50%;
+}
+
+@media (min-width: 800px) {
+#sidebar-right {
+ float: right;
+    left: 50%;
+    width: 50%;
+    position: fixed;
+    top: 40%;
+}
+}
+@media (max-width: 799px) and (min-width: 481px) {
+   #sidebar-right {
+      clear: both;
+      float: none;
+      width: 100%;
+   }
+}
+@media (max-width: 480px) {
+  #sidebar-left, #sidebar-right {
+      clear: both;
+      float: none;
+      width: 100%;
+  }
+}
