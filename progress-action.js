@@ -1,44 +1,44 @@
-var barData;
+var barData;  //Define barData array
 
 barData = [ 
                 bar = {
                     id: 'bar1', 
                     name: 'Progress Bar 1',
-					value: 3,
-					width: 3,
-					total: 10,
+					value: 5,
+					width: 5,
+					total: 100,
 					fullClass: ''
                 },
                 bar = {
                     id: 'bar2', 
                     name: 'Progress Bar 2',
-					value: 6,
-					width: 6,
-					total: 10,
+					value: 35,
+					width: 35,
+					total: 100,
 					fullClass: ''
                 },
                 bar = {
                     id: 'bar3', 
                     name: 'Progress Bar 3',
-					value: 10,
-					width: 10,
-					total: 10,
+					value: 50,
+					width: 50,
+					total: 100,
 					fullClass: ''
                 },
                 bar = {
                     id: 'bar4', 
                     name: 'Progress Bar 4',
-					value: 120,
-					width: 120,
+					value: 75,
+					width: 75,
 					total: 100,
 					fullClass: ''
                 },
                 bar = {
                     id: 'bar5',
                     name: 'Progress Bar 5',
-					value: 10,
-					width: 10,
-					total: 10,
+					value: 100,
+					width: 100,
+					total: 100,
 					fullClass: ''
                 },
                 bar = {
@@ -49,24 +49,25 @@ barData = [
 					total: 100,
 					fullClass: ''
                 } 
-            ];
+            ]; //Fill barData with default data
+
 
 var ractive = new Ractive({
-      // The `el` option can be a node, an ID, or a CSS selector.
       el: '#container',
 
       template: '#progressBar',  // Load in progressBar template
 
-      // Here, we're passing in some initial data
-       data: { dataBar: barData } 
+      
+       data: { dataBar: barData } //Load barData into ractive as dataBar array
     
     });
 
 $.each( barData, function( key, value ) {
     setValues(key, true, 0);
-});
+});  //Conform all initial progress bars values for display
 
 	function setValues(barIndex, add, value) {
+		// This function sets ractive elements to their correct values
         if ($.isNumeric(barIndex)) {
             var barId = 'dataBar.'+barIndex;
 			var barIdTotal = ractive.get(barId+'.total');
@@ -89,8 +90,9 @@ $.each( barData, function( key, value ) {
              alert("Select a progress bar");
         }
 	}
+	
 	var listener = ractive.on({
         setPercent: function (event, barId, add, value) {
             setValues(barId, add, value);
         }
-	});
+	}); //Bind to ractive elements onload
