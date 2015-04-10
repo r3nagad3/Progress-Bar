@@ -1,4 +1,4 @@
-var barData;  //Define barData array
+var barData = [];  //Define barData array
 
 barData = [ 
                 bar = {
@@ -51,7 +51,6 @@ barData = [
                 } 
             ]; //Fill barData with default data
 
-
 var ractive = new Ractive({
       el: '#container',
 
@@ -92,7 +91,9 @@ $.each( barData, function( key, value ) {
 	}
 	
 	var listener = ractive.on({
-        setPercent: function (event, barId, add, value) {
-            setValues(barId, add, value);
+        setPercent: function (event, barIndex, add, value) {
+            setValues(barIndex, add, value);
+			var barId = 'dataBar.'+barIndex;
+			var barIdTotal = ractive.get(barId+'.total');
         }
 	}); //Bind to ractive elements onload
