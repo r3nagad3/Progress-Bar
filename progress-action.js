@@ -81,7 +81,7 @@ $.each( barData, function( key, value ) {
 				ractive.set(barId+'.fullClass', 'full');
 			} else if (barIdValue<=0) {
 				ractive.set(barId+'.value', 0);
-				ractive.set(barId+'.width', 0);
+				ractive.animate(barId+'.width', 0);
 			} else {
 				ractive.set(barId+'.fullClass', '');
 				ractive.animate(barId+'.width', barIdValue);

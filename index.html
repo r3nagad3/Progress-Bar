@@ -7,9 +7,8 @@
 	</head>
 	<body>
 		<div id='container'></div>
-
 		<script id='progressBar' type='text/ractive'>
-			<div id="sidebar-left">
+			
 				{{#each dataBar:num}}
 					<div class='bar-label'>{{ name }}</div>
 					<div id='{{ id }}' class='progress'>
@@ -17,21 +16,18 @@
 						<div class='bar {{ fullClass }}' style='width: {{ 100 * width / total }}%;'></div>
 					</div>
 				{{/each}}
-			</div>
-			<div id="sidebar-right">
 				<select value='{{selectedColors}}'>
 					<option selected disabled>Select a bar</option>
 					{{#each dataBar:num}}
 						<option value='{{num}}'>{{name}}</option>
 					{{/each}}
 				</select>
-				<button on-click='setPercent:{{selectedColors}},true,10'>+10%</button>
-				<button on-click='setPercent:{{selectedColors}},true,25'>+25%</button>
-				<button on-click='setPercent:{{selectedColors}},true,30'>+30%</button>
-				<button on-click='setPercent:{{selectedColors}},false,10'>-10%</button>
-				<button on-click='setPercent:{{selectedColors}},false,25'>-25%</button>
-				<button on-click='setPercent:{{selectedColors}},false,30'>-30%</button>
-			</div>
+				<button class="button-add" on-click='setPercent:{{selectedColors}},true,10'>+10%</button>
+				<button class="button-add" on-click='setPercent:{{selectedColors}},true,25'>+25%</button>
+				<button class="button-add" on-click='setPercent:{{selectedColors}},true,30'>+30%</button>
+				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,10'>-10%</button>
+				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,25'>-25%</button>
+				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,30'>-30%</button>
 		</script>
 			<script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
 			<script src="progress-action.js">
