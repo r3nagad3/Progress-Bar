@@ -6,9 +6,15 @@
 		<title>Progress Bar Project - Ractive</title>
 	</head>
 	<body>
-		<div id='container'></div>
+	<div class="section group">
+		<div class="col col_span"></div>
+		<div class="col col_span">
+			<div id='container'></div>
+		</div>
+	</div>		
 		<script id='progressBar' type='text/ractive'>
-			
+
+
 				{{#each dataBar:num}}
 					<div class='bar-label'>{{ name }}</div>
 					<div id='{{ id }}' class='progress'>
@@ -16,12 +22,14 @@
 						<div class='bar {{ fullClass }}' style='width: {{ 100 * width / total }}%;'></div>
 					</div>
 				{{/each}}
+				<div class='select'>
 				<select value='{{selectedColors}}'>
 					<option selected disabled>Select a bar</option>
 					{{#each dataBar:num}}
 						<option value='{{num}}'>{{name}}</option>
 					{{/each}}
 				</select>
+				</div>
 				<button class="button-add" on-click='setPercent:{{selectedColors}},true,10'>+10%</button>
 				<button class="button-add" on-click='setPercent:{{selectedColors}},true,25'>+25%</button>
 				<button class="button-add" on-click='setPercent:{{selectedColors}},true,30'>+30%</button>
