@@ -45,7 +45,7 @@ QUnit.test( "calcPercent no less than 0, but can be greater than 100", function(
 	assert.deepEqual(greaterThan100, 120, "Value is greater than 100" );
 });
 
-QUnit.test( "fullBar returns 'fullClass' str if value>=total", function( assert ) {
+QUnit.test( "fullBar returns 'fullClass' str if value>=100", function( assert ) {
 	var valueLessThanHundredPercent = fullBar(55);
 	var valueEqualToHundredPercent = fullBar(100);
 	var valueGreaterThanHundredPercent = fullBar(150);

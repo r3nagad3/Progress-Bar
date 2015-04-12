@@ -44,6 +44,19 @@ button:hover {
 	background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.1));
 }
 
+.select-container {
+    position: relative;
+    max-width: 70%;
+	margin: 25px auto;
+}
+
+
+.button-wrapper {
+    float: left;
+    position: relative;
+    width: 100%;
+	margin: 20px 0;
+}
 .button-add {
      background: rgb(28, 184, 65);
 }
@@ -60,7 +73,6 @@ button:hover {
 
 .select-wrapper {
     background-color: #eee;
-    border: 1px solid #aaa;
     color: #aaa;
     cursor: pointer;
     float: left;
@@ -103,10 +115,6 @@ button:hover {
 .col_span { width: 32%; }
 
 
-@media only screen and (max-width: 1024px) and (min-width: 860px), only screen and (max-device-width: 1024px) and (min-device-width: 860px) {
-
-}
-
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
 
 	body { font-size: 2em; }
@@ -124,4 +132,11 @@ button:hover {
 	button {
 		font-size: 1.5em;
 	}	
+	.button-wrapper {
+		max-width: 100%;
+	}
+	.select-container {
+		max-width: 100%;
+	}
+
 }

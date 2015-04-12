@@ -38,10 +38,14 @@
 						</select>
 					</div>
 				</div>
-				<button class="button-add" on-click='bindEvent:{{selectedColors}},true,10'>+10%</button>
-				<button class="button-add" on-click='bindEvent:{{selectedColors}},true,25'>+25%</button>
-				<button class="button-subtract" on-click='bindEvent:{{selectedColors}},false,10'>-10%</button>
-				<button class="button-subtract" on-click='bindEvent:{{selectedColors}},false,25'>-25%</button>
+				<div class="button-container">
+					<div class="button-wrapper">
+						<button class="button-add" on-click='bindEvent:{{selectedColors}},true,10'>+10%</button>
+						<button class="button-add" on-click='bindEvent:{{selectedColors}},true,25'>+25%</button>
+						<button class="button-subtract" on-click='bindEvent:{{selectedColors}},false,10'>-10%</button>
+						<button class="button-subtract" on-click='bindEvent:{{selectedColors}},false,25'>-25%</button>
+					</div>
+				</div>
 		</script>
 			<script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
 			<script src="progress-action.js">
