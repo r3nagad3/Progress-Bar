@@ -62,11 +62,11 @@ button:hover {
 	margin: 20px 0;
 }
 .button-add {
-     background: rgb(28, 184, 65);
+     background: #1CB841;
 }
 
 .button-subtract {
-    background: rgb(202, 60, 60);
+    background: #CA3C3C;
 }
 
 optgroup {
@@ -122,11 +122,6 @@ optgroup {
 
 
 .col_span { width: 32%; }
-
-
-@media only screen and (max-width: 1024px) and (min-width: 860px), only screen and (max-device-width: 1024px) and (min-device-width: 860px) {
-
-}
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
 
