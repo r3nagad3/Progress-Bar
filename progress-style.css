@@ -1,5 +1,5 @@
 .progress {
-    height: 50px;
+    height: 25px;
     position: relative;
     max-width: 70%;
 	margin: 25px 0px;
@@ -20,11 +20,11 @@
 .progress .bar-text {
 	color: #FFFFFF;
 	text-align:center;
-	height: 50px;
-	line-height: 50px;
+	height: 25px;
+	line-height: 25px;
 	position: absolute;
 	width: 100%;
-	font-size: x-large;
+	font-size: large;
 }
 .bar-label {
 	color: #000000;
@@ -42,10 +42,6 @@
 	padding: 15px;
 }
 
-#sidebar-left {
- float: left;
-    width: 50%;
-}
 button {
     color: white;
     border-radius: 4px;
@@ -81,16 +77,26 @@ button:hover {
 .col:first-child { margin-left: 0; }
 
 
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-
 
 .col_span { width: 32%; }
 
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1024px) and (min-width: 860px) {
+//Tablets view
+
+}
+
+@media only screen and (max-width: 767px) {
+//Mobile View
 	.col {  margin: 1% 0 1% 0%; }
 	.col_span { width: 100%; }
+	.progress {
+		height: 50px;
+	
+	}
+	.progress .bar-text {
+		height: 50px;
+		line-height: 50px;
+		font-size: x-large;
+	}
 }

@@ -21,13 +21,11 @@
 		</div>
 	</div>		
 		<script id='progressBar' type='text/ractive'>
-
-
 				{{#each dataBar:num}}
 					<div class='bar-label'>{{ name }}</div>
 					<div id='{{ id }}' class='progress'>
-						<div class='bar-text'>{{ 100 * value / total }}%</div>
-						<div class='bar {{ fullClass }}' style='width: {{ 100 * width / total }}%;'></div>
+						<div class='bar-text'>{{ value }}%</div>
+						<div class='bar {{ fullClass }}' style='width: {{ width  }}%;'></div>
 					</div>
 				{{/each}}
 				<div class='select'>
@@ -38,12 +36,12 @@
 					{{/each}}
 				</select>
 				</div>
-				<button class="button-add" on-click='setPercent:{{selectedColors}},true,10'>+10%</button>
-				<button class="button-add" on-click='setPercent:{{selectedColors}},true,25'>+25%</button>
-				<button class="button-add" on-click='setPercent:{{selectedColors}},true,30'>+30%</button>
-				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,10'>-10%</button>
-				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,25'>-25%</button>
-				<button class="button-subtract" on-click='setPercent:{{selectedColors}},false,30'>-30%</button>
+				<button class="button-add" on-click-touchend='bindEvent:{{selectedColors}},true,10'>+10%</button>
+				<button class="button-add" on-click-touchend='bindEvent:{{selectedColors}},true,25'>+25%</button>
+				<button class="button-add" on-click-touchend='bindEvent:{{selectedColors}},true,30'>+30%</button>
+				<button class="button-subtract" on-click-touchend='bindEvent:{{selectedColors}},false,10'>-10%</button>
+				<button class="button-subtract" on-click-touchend='bindEvent:{{selectedColors}},false,25'>-25%</button>
+				<button class="button-subtract" on-click-touchend='bindEvent:{{selectedColors}},false,30'>-30%</button>
 		</script>
 			<script src="http://cdn.ractivejs.org/latest/ractive.min.js"></script>
 			<script src="progress-action.js">
