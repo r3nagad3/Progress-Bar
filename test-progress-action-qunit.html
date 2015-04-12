@@ -31,10 +31,12 @@
 				<div class="select-container">
 					<div class='select-wrapper'>
 						<select class="select" value='{{selectedColors}}'>
-							<option selected disabled>Select a bar</option>
-							{{#each dataBar:num}}
-								<option value='{{num}}'>{{name}}</option>
-							{{/each}}
+							<optgroup>
+								<option selected disabled>Select a bar</option>
+								{{#each dataBar:num}}
+									<option value='{{num}}'>{{name}}</option>
+								{{/each}}
+							</optgroup>
 						</select>
 					</div>
 				</div>

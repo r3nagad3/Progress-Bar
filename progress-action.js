@@ -56,9 +56,7 @@ var ractive = new Ractive({
 			if ($.isNumeric(barIndex)) {
 				var addValue = calcPercent(value, this.get('dataBar.'+barIndex+'.value'), add);
 				var barId = 'dataBar.'+barIndex;
-				this.animate(barId+'.width', checkWidthValue(addValue), {
-					easing: 'linear'
-				});
+				this.animate(barId+'.width', checkWidthValue(addValue));
 				this.set(barId+'.value', checkValidValue(addValue));
 				this.set(barId+'.fullClass', fullBar(checkValidValue(addValue)));
 			} else {
