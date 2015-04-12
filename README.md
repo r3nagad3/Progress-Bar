@@ -9,6 +9,15 @@ This project is to generate progress bars based on the following behaviours usin
         Can go over 100, but limit the bar itself and change its colour
         Display usage amount, centered
 
+## How to Use
+
+Best way to run this is to download the project as a ZIP file and run the two following files.  One that runs the progress bar demo, and one that runs the progress bar demo and the javascript functions to test in QUINT.
+
+* To run this progress bar demo run the file: index.html
+* To run the testing for this demo, run the file: test-progress-action-qunit.html
+
+Also at the bottom of this README is a link to one of my testing site that I have uploaded this project to for a demo.
+
 ## Testing
 
 Testing is done via qunit https://qunitjs.com/.  This was used to build the javascript functions based around the above behaviours using TDD.
