@@ -45,7 +45,7 @@ The progress bars are animated with the RactiveJS Frameworks .animate()  The bar
 The CSS files have been run through a linting program to verify the validity of the CSS stylesheets.  The JavaScript files have
 also been run through a linting program to verify the validity of the Javascript code.
 
-## Minfication
+## Minification
 
 The minified and full version of the Javascript and CSS files are located in this package.  The minified versions of the JS and
 CSS files are used in the index.html and test-progress-action-qunit.html files. The following three files have all been
