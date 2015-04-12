@@ -115,6 +115,10 @@ button:hover {
 .col_span { width: 32%; }
 
 
+@media only screen and (max-width: 1024px) and (min-width: 860px), only screen and (max-device-width: 1024px) and (min-device-width: 860px) {
+
+}
+
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
 
 	body { font-size: 2em; }
@@ -136,7 +140,6 @@ button:hover {
 		max-width: 100%;
 	}
 	.select-container {
-		max-width: 100%;
 	}
 
 }
