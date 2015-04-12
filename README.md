@@ -21,7 +21,15 @@ This project includes the following files to testing the javascript functions lo
 
 ## Responsive Design and Styling
 
-The Progress Bars are colored using the Optus colors
+The Responsive code makes use of media queries to break the column layout at max-width: 767px.  At this point the progress bars, select box, and button text is expanded to enhance viewability of the elements in a mobile view.  The progress bars height is also increased.  Tablets view utilizes the desktop view, this works fine as the columned layout enforces the element to remain in the centre of the screen for Desktops and Tablets.
+
+The Progress Bars are colored using the Optus colors.  \#178093 is used for the bar itself, #ffd100 is used for the fill color, and #ff0000 is used for a full bar color (greater than or equal to 100%).  The bars are also styled with round borders for a more modern look.
+
+The control buttons and select box have been styled with CSS to make them look more modern.  Also all buttons that increase the progress bars are colored #1CB841 and the buttons that decrease the progress bars are colored #CA3C3C.
+
+## Animations
+
+The progress bars are animated with the RactiveJS Frameworks .animate()  The bars will animate between 0% and 100%.  Animations occur on the increase and decrease of the progress bars usage.
 
 ## Linting
 
