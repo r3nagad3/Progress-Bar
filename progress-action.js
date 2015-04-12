@@ -25,17 +25,7 @@ barData = [
                     id: 'bar5',
                     name: 'Progress Bar 5',
 					value: 100
-                },
-                bar = {
-                    id: 'bar6' ,
-                    name: 'Progress Bar 6',
-					value: 120
-                },
-                bar = {
-                    id: 'bar7' ,
-                    name: 'Progress Bar 7',
-					value: 1200
-                } 
+                }
             ]; //Fill barData with default data
 
 var ractive = new Ractive({
