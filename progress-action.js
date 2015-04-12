@@ -46,14 +46,15 @@ var ractive = new Ractive({
       
        data: { dataBar: barData}, //Load barData into ractive as dataBar array
 	   
-	   oninit: function () {
+	   oninit: function () { //on initialization iterate over dataBar array
 			for (var i=0; i < this.get('dataBar').length; i++) {
 				this.setPercentages(i, true, 0);
 			}
 	   },
 	   setPercentages: function ( barIndex, add, value )  {
+		   //Set percentages and animations in Ractive to the DOM
 			if ($.isNumeric(barIndex)) {
-				addValue = calcPercent(value, this.get('dataBar.'+barIndex+'.value'), add);
+				var addValue = calcPercent(value, this.get('dataBar.'+barIndex+'.value'), add);
 				var barId = 'dataBar.'+barIndex;
 				this.animate(barId+'.width', checkWidthValue(addValue), {
 					easing: 'linear'
@@ -68,25 +69,29 @@ var ractive = new Ractive({
     });
 	
 
-	function checkWidthValue(Value) {
-			if (Value>=100) {
+	function checkWidthValue(value) {
+		//Returns 0 for any result under 0
+		//Returns 100 for any result over 100
+			if (value>=100) {
 				return  100;
-			} else if (Value<=0) {
-				return  0;
 			} else {
-				return  Value;
+				return checkValidValue(value);
 			}
 	}
 
-	function checkValidValue(Value) {
-			if (Value<=0) {
+	function checkValidValue(value) {
+		//Returns 0 for any result value 0
+			if (value<=0) {
 				return  0;
 			} else {
-				return  Value;
+				return  value;
 			}
 	}
 
 	function calcPercent(addValue, barIdValue, add) {
+		//Add or Subtract addValue from barIdValue
+		//Add if add is true, Subtract if add is false
+		//Returns 0 for any result under 0
 			if (add) {
 				barIdValue += addValue;
 			} else {
@@ -99,14 +104,16 @@ var ractive = new Ractive({
 	}
 	
 	function fullBar(value) {
-		if (value>=100) {
-			return 'full';
-		} else {
-			return '';
-		}
+		//Returns string 'full' for any value 100 and over
+		//Returns string '' for any other value
+			if (value>=100) {
+				return 'full';
+			} else {
+				return '';
+			}
 	}
 	
-	var listener = ractive.on({
+	ractive.on({
         bindEvent: function (event, barIndex, add, value) {
 				this.setPercentages(barIndex, add, value);
         }

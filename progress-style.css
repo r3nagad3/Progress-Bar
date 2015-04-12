@@ -2,12 +2,9 @@
     height: 25px;
     position: relative;
     max-width: 70%;
-	margin: 25px 0px;
+	margin: 25px auto;
 	border-radius: 7px;
 	background-color: #178093;
-    margin-left: auto;
-    margin-right: auto;
-	
 }
 .progress .bar {
     height: 100%;
@@ -31,15 +28,9 @@
 	position: relative;
 }
 
-.bar.full {
-	background-color: #ff0000 !important;
-	width: 100% !important;
-}
-.select {
-	margin: 15px;
-}
-.select select {
-	padding: 15px;
+.progress .full {
+	background-color: #ff0000;
+	width: 100%;
 }
 
 button {
@@ -61,10 +52,41 @@ button:hover {
     background: rgb(202, 60, 60);
 }
 
+.select-container {
+    position: relative;
+    max-width: 70%;
+	margin: 25px auto;
+}
+
+.select-wrapper {
+    background-color: #eee;
+    border: 1px solid #aaa;
+    color: #aaa;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+	margin: 20px 0;
+	border-radius: 7px;
+}
+
+.select {
+    background-color: #eee;
+    border-width: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    font-size: 1em;
+    line-height: 1em;
+    padding: 16px 16px;
+    width: 100%;
+}
+
 .section {
 	clear: both;
-	padding: 0px;
-	margin: 0px;
+	padding: 0;
+	margin: 0;
 	text-align: center;
 }
 
@@ -81,22 +103,25 @@ button:hover {
 .col_span { width: 32%; }
 
 
-@media only screen and (max-width: 1024px) and (min-width: 860px) {
-//Tablets view
+@media only screen and (max-width: 1024px) and (min-width: 860px), only screen and (max-device-width: 1024px) and (min-device-width: 860px) {
 
 }
 
-@media only screen and (max-width: 767px) {
-//Mobile View
-	.col {  margin: 1% 0 1% 0%; }
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+
+	body { font-size: 2em; }
+
+	.col {  margin: 1% 0 1% 0; }
 	.col_span { width: 100%; }
 	.progress {
-		height: 50px;
+		height: 1.5em;
 	
 	}
 	.progress .bar-text {
-		height: 50px;
-		line-height: 50px;
-		font-size: x-large;
+		line-height: 1em;
+		font-size: 1.5em;
 	}
+	button {
+		font-size: 1.5em;
+	}	
 }
