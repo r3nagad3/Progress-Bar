@@ -46,9 +46,14 @@ var ractive = new Ractive({
 			if ($.isNumeric(barIndex)) {
 				var addValue = calcPercent(value, this.get('dataBar.'+barIndex+'.value'), add);
 				var barId = 'dataBar.'+barIndex;
-				this.animate(barId+'.width', checkWidthValue(addValue));
+				this.animate(barId+'.width', checkWidthValue(addValue), {
+					duration: '150',
+					easing: 'linear',
+					complete: this.set(barId+'.fullClass', fullBar(checkValidValue(addValue)))
+
+				
+				});
 				this.set(barId+'.value', checkValidValue(addValue));
-				this.set(barId+'.fullClass', fullBar(checkValidValue(addValue)));
 			} else {
 				alert("Select a progress bar");
 			}
